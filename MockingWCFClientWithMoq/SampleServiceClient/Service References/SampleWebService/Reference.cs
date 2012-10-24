@@ -17,6 +17,9 @@ namespace SampleServiceClient.SampleWebService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStringService/ReverseString", ReplyAction="http://tempuri.org/IStringService/ReverseStringResponse")]
         string ReverseString(string input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStringService/ReverseString", ReplyAction="http://tempuri.org/IStringService/ReverseStringResponse")]
+        System.Threading.Tasks.Task<string> ReverseStringAsync(string input);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -48,6 +51,10 @@ namespace SampleServiceClient.SampleWebService {
         
         public string ReverseString(string input) {
             return base.Channel.ReverseString(input);
+        }
+        
+        public System.Threading.Tasks.Task<string> ReverseStringAsync(string input) {
+            return base.Channel.ReverseStringAsync(input);
         }
     }
 }

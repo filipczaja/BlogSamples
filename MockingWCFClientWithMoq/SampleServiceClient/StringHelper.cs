@@ -23,9 +23,9 @@ namespace SampleServiceClient
             _client = client;
         }
 
-        public string Reverse(string input)
+        public async Task<string> ReverseAsync(string input)
         {
-            return _client.ReverseString(input);
+            return await _client.ReverseStringAsync(input);
         }
     }
 }
